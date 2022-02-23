@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "b47ab68e-6a0b-4e76-be75-a1a8041bd170",
+		"name": "SANDBOX_MITRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gen Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "OZBheQi0ghA05nk045f_NyvUMMwa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "YSn92xwy080VghSil0tClxpFh5Aa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/token",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddpostingDoc",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c3b1beaf-a378-3a3a-a05b-4df4e58d7eef",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userid\": 1,\r\n  \"memberid\": \"MrkaosbdgA\",\r\n  \"orderid\": \"AUL0000001114\",\r\n  \"addresses\": [\r\n    {\r\n      \"addresstype\": \"senderlocation\",\r\n      \"customertype\": 1,\r\n      \"name\": \"abraham\",\r\n      \"phone\": \"081229282266\",\r\n      \"email\": \"abrahamciamik@rocketmail.com\",\r\n      \"address\": \"jalan sunter abadi agung no 81 rt 04 rw 12\",\r\n      \"subdistrict\": \"cibubur\",\r\n      \"city\": \"jakarta\",\r\n      \"province\": \"DKI Jakarta\",\r\n      \"zipcode\": \"30112\",\r\n      \"country\": \"Indonesia\",\r\n      \"geolang\": \"-0012.-1212122\",\r\n      \"geolat\": \"-0013.-1212122\",\r\n      \"description\": \"\"\r\n    },\r\n    {\r\n      \"addresstype\": \"receiverlocation\",\r\n      \"customertype\": 1,\r\n      \"name\": \"Rusman\",\r\n      \"phone\": \"081225242233\",\r\n      \"email\": \"rusmanadja@rocketmail.com\",\r\n      \"address\": \"jl kencana jaya sunter abadi\",\r\n      \"subdistrict\": \"Margahayu\",\r\n      \"city\": \"Bandung Selatan\",\r\n      \"province\": \"Jawa Barat\",\r\n      \"zipcode\": \"40113\",\r\n      \"country\": \"Indonesia\",\r\n      \"geolang\": \"-0015.-1212122\",\r\n      \"geolat\": \"-0016.-1212122\",\r\n      \"description\": \"\"\r\n    }\r\n  ],\r\n  \"itemdetils\": [\r\n    {\r\n      \"hscode\": \"61069000\",\r\n      \"origincountry\": \"CHINA\",\r\n      \"description\": \"TAS\",\r\n      \"quantity\": \"1\",\r\n      \"value\": \"30\"\r\n    }\r\n  ],\r\n  \"itemproperties\": {\r\n    \"itemtypeid\": 1,\r\n    \"productid\": \"210\",\r\n    \"valuegoods\": 1000000,\r\n    \"weight\": 1200,\r\n    \"length\": 0,\r\n    \"width\": 0,\r\n    \"height\": 0,\r\n    \"codvalue\": 100,\r\n    \"pin\": 123456,\r\n    \"itemdesc\": \"kompor\"\r\n  },\r\n  \"paymentvalues\": [\r\n    {\r\n      \"name\": \"fee\",\r\n      \"value\": 70000\r\n    },\r\n    {\r\n      \"name\": \"insurance\",\r\n      \"value\": 700\r\n    }\r\n  ],\r\n  \"taxes\": [\r\n    {\r\n      \"name\": \"fee\",\r\n      \"value\": 700\r\n    },\r\n    {\r\n      \"name\": \"insurance\",\r\n      \"value\": 700\r\n    }\r\n  ],\r\n  \"services\": [\r\n    {\r\n      \"name\": \"insurance\",\r\n      \"value\": 1\r\n    },\r\n    {\r\n      \"name\": \"genreceipt\",\r\n      \"value\": 1\r\n    },\r\n    {\r\n      \"name\": \"printreceipt\",\r\n      \"value\": 1\r\n    },\r\n    {\r\n      \"name\": \"cod\",\r\n      \"value\": 0\r\n    },\r\n    {\r\n      \"name\": \"pickup\",\r\n      \"value\": 0\r\n    },\r\n    {\r\n      \"name\": \"delivery\",\r\n      \"value\": 0\r\n    },\r\n    {\r\n      \"name\": \"notiftosender\",\r\n      \"value\": 0\r\n    },\r\n    {\r\n      \"name\": \"notiftoreceiver\",\r\n      \"value\": 0\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/webhookpos/1.0.1/AddPostingDoc",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"webhookpos",
+						"1.0.1",
+						"AddPostingDoc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFee Get Tarif",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c3b1beaf-a378-3a3a-a05b-4df4e58d7eef",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerid\": \"DAGSHOPEE04120A\",\r\n  \"desttypeid\": \"1\",\r\n  \"itemtypeid\": \"1\",\r\n  \"shipperzipcode\": \"12790\",\r\n  \"receiverzipcode\": \"12190\",\r\n  \"weight\": 650,\r\n  \"length\": 0,\r\n  \"width\": 0,\r\n  \"height\": 0,\r\n  \"diameter\": 0,\r\n  \"valuegoods\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/utilitas/1.0.1/getFee",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getFee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTrackAndTraceDetail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 49dea7b1-a018-3dd5-bfd4-7668a712af0f",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"barcode\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.posindonesia.co.id:8245/utility/1.0.0/getTrackAndTraceDetail",
+					"protocol": "https",
+					"host": [
+						"api",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utility",
+						"1.0.0",
+						"getTrackAndTraceDetail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTrackAndTrace",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c3b1beaf-a378-3a3a-a05b-4df4e58d7eef",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"resi\": \"70648366372\"\r\n}"
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/utilitas/1.0.1/getTrackAndTrace",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getTrackAndTrace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPostalCode-LN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 5a126090-17a0-3bd1-9923-5ed67d9b60ab",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"HONGKONG\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.posindonesia.co.id:8245/utilitas/1.0.1/getPostalCode",
+					"protocol": "https",
+					"host": [
+						"api",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getPostalCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPostalCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c3b1beaf-a378-3a3a-a05b-4df4e58d7eef",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"bandung\",\r\n    \"address\": \"cinunuk\"\r\n}"
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/utilitas/1.0.1/getPostalCode",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getPostalCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSubDistrict",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 49dea7b1-a018-3dd5-bfd4-7668a712af0f",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"barcode\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.posindonesia.co.id:8245/utility/1.0.0/getTrackAndTraceDetail",
+					"protocol": "https",
+					"host": [
+						"api",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utility",
+						"1.0.0",
+						"getTrackAndTraceDetail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSubsubdistric",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 49dea7b1-a018-3dd5-bfd4-7668a712af0f",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"provinceCode\": \"21\",\r\n\"cityCode\": \"246\",\r\n\"subDistrictCode\": \"40516\",\r\n\"subDistrictType\": \"\",\r\n\"subDistrictName\": \"Kec.Pulogadung\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.posindonesia.co.id:8245/utilitas/1.0.1/getSubSubDistrict",
+					"protocol": "https",
+					"host": [
+						"api",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getSubSubDistrict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProvince",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c3b1beaf-a378-3a3a-a05b-4df4e58d7eef",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"provinceCode\": \"\"\r\n  }"
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/utilitas/1.0.1/getProvince",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getProvince"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 5a126090-17a0-3bd1-9923-5ed67d9b60ab",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-USER",
+						"value": "crossborder",
+						"type": "text"
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"provinceCode\": \"21\",\r\n  \"cityName\": \"KOTA ADM. JAKARTA TIMUR\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.posindonesia.co.id:8245/utilitas/1.0.1/getCity",
+					"protocol": "https",
+					"host": [
+						"api",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utilitas",
+						"1.0.1",
+						"getCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTrackAndTraceNew",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c3b1beaf-a378-3a3a-a05b-4df4e58d7eef",
+						"type": "text"
+					},
+					{
+						"key": "X-API-KEY",
+						"value": "CpFzVJWl7MgFLWT8wL8Aqz1Jvo3zyytF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-POS-PASSWORD",
+						"value": "crossborder@123",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://sandbox.posindonesia.co.id:8245/utility/1.0.0/tracking/P2111050018280",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"posindonesia",
+						"co",
+						"id"
+					],
+					"port": "8245",
+					"path": [
+						"utility",
+						"1.0.0",
+						"tracking",
+						"P2111050018280"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
